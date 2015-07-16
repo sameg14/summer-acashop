@@ -1,0 +1,3 @@
+aca_shop_homepage:
+    path:     /hello/{name}/age/{myAge}
+    defaults: { _controller: AcaShopBundle:Default:index }
