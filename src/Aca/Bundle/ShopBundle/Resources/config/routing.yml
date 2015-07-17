@@ -1,3 +1,14 @@
-aca_shop_homepage:
-    path:     /hello/{name}/age/{myAge}
-    defaults: { _controller: AcaShopBundle:Default:index }
+aca_shop_home:
+    path:     /
+    defaults: { _controller: AcaShopBundle:Home:index }
+
+# This will get hit when the user types in a username
+# and a password, and hits the submit button
+aca_shop_login:
+    path:     /login_user
+    defaults: { _controller: AcaShopBundle:Home:login }
+
+# Route to handle logout, when the user clicks the logout button
+aca_shop_logout:
+    path: /logout
+    defaults: { _controller: AcaShopBundle:Home:logout }

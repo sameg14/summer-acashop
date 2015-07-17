@@ -1,0 +1,36 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AcaShopBundle:Home:index{% endblock %}
+
+{% block body %}
+    <h1>Welcome to ACA Shop</h1>
+
+    {% if loggedIn == 0 %}
+
+        {% if errorMessage is not empty %}
+        <div class="alert alert-warning alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                 <span aria-hidden="true">&times;</span>
+            </button>
+            <b>{{ errorMessage }}</b>
+        </div>
+        {% endif %}
+
+        <form name="loginForm" action="/login_user" method="post">
+            Username: <input type="text" name="username"/>
+            <br/>
+            Password: <input type="text" name="password"/>
+            <br/>
+            <button type="submit">Login</button>
+        </form>
+    {% else %}
+
+        Welcome, {{ name }}!
+
+        <form name="logoutForm" action="/logout" method="post">
+            <button type="submit">Logout</button>
+        </form>
+
+    {% endif %}
+
+{% endblock %}
