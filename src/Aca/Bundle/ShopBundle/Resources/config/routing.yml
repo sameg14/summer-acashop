@@ -12,3 +12,11 @@ aca_shop_login:
 aca_shop_logout:
     path: /logout
     defaults: { _controller: AcaShopBundle:Home:logout }
+
+aca_shop_products:
+    path:     /products
+    defaults: { _controller: AcaShopBundle:Product:show }
+
+aca_shop_add_cart:
+    path:     /add_cart
+    defaults: { _controller: AcaShopBundle:Cart:add }

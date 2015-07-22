@@ -45,7 +45,8 @@ class HomeController extends Controller
         // Check username and password
         $query = 'select * from aca_user where username="' . $username . '" and password="' . $password . '"';
 
-        $db = new DBCommon();
+        $db = $this->get('aca.db');
+
         $db->setQuery($query);
         $user = $db->loadObject(); // fetches one row from the database!
 
@@ -75,5 +76,18 @@ class HomeController extends Controller
         $session->clear();
 
         return new RedirectResponse('/');
+    }
+
+    public function processFacebookLogin(){
+
+        /** @var DBCommon $db */
+        $db = $this->get('aca.db');
+
+    }
+
+    public function processFacebookLogin2(){
+
+        $db = new DBCommon('localhost', 'root', 'root', 'acashop');
+
     }
 }

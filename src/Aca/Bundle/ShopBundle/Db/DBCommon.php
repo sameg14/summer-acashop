@@ -47,7 +47,7 @@ class DBCommon
      *
      * @throws Exception
      */
-    public function __construct($host='localhost', $user='root', $pass='root', $database='acashop', $port = 3306)
+    public function __construct($host, $user, $pass, $database, $port = 3306)
     {
         $this->mysqli = new mysqli($host, $user, $pass, $database, $port);
         $this->mysqli->set_charset("utf8");
