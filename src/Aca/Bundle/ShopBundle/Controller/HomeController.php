@@ -2,9 +2,8 @@
 
 namespace Aca\Bundle\ShopBundle\Controller;
 
-use Symfony\Component\HttpFoundation\Session\Session;
-
 use Aca\Bundle\ShopBundle\Db\DBCommon;
+use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 

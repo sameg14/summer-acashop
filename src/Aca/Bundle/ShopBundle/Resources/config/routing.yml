@@ -20,3 +20,15 @@ aca_shop_products:
 aca_shop_add_cart:
     path:     /add_cart
     defaults: { _controller: AcaShopBundle:Cart:add }
+
+aca_shop_display_cart:
+    path:     /cart
+    defaults: { _controller: AcaShopBundle:Cart:show }
+
+aca_delete_cart_item:
+    path:     /delete_cart_item
+    defaults: { _controller: AcaShopBundle:Cart:delete }
+
+aca_update_cart_item:
+    path: update_cart_item
+    defaults: { _controller: AcaShopBundle:Cart:update }

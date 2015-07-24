@@ -1,18 +1,6 @@
-// Create a route called "/products"
+// One delete button (form)
+// One quantity update (form)
 
-// Create a controller to handle that route
-
-// Query all the products we have
-
--------------------END TIMEBOX-------------------
-
-
-
-
--------------------PAIR UP-----------------------
-
-// Pass off the array of "rows" to the template
-
-// Create a template
-
-// Render each product using {% foreach %}
+// Hint: Do your calculations in PHP
+// We need to keep track of the total product price = product_price * quantity
+// We also need to display a grand total for the entire order

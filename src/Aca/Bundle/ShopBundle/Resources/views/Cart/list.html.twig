@@ -1,0 +1,66 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    <h3>Shopping Cart</h3>
+
+    {% if products is not empty %}
+
+        <table class="table table-striped" style="width:100%;">
+            <thead>
+            <tr>
+                <th>Image</th>
+                <th>Product Details</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for product in products %}
+
+                <tr>
+                    <td>
+                        <img src="{{ product.image }}" width="100px"/>
+                    </td>
+                    <td>
+                        <h3>{{ product.name }}</h3>
+
+                        <p>{{ product.description }}</p>
+                    </td>
+
+                    <td>
+                        Price: <b>${{ product.price }}</b>
+                        <br/>
+                        Total Product Price: <b>{{ product.total_price }}</b>
+                    </td>
+
+                    <td>
+                        <form name="deleteItemForm" action="/delete_cart_item" method="post">
+                            <input type="hidden" name="product_id" value="{{ product.product_id }}"/>
+                            <button class="btn btn-danger">Delete Item</button>
+                        </form>
+
+                        <form name="updateQtyForm" action="/update_cart_item" method="post">$
+                            <input type="hidden" name="product_id" value="{{ product.product_id }}"/>
+                            <input type="text" name="quantity" size="3" value="{{ product.quantity }}"/>
+                            <button class="btn btn-primary">Update Quantity</button>
+                        </form>
+
+                    </td>
+
+                </tr>
+
+            {% endfor %}
+            </tbody>
+
+        </table>
+
+        <h4>Grand Total: {{ grandTotal|number_format(2) }}</h4>
+
+    {% else %}
+
+        <h4>No products to display</h4>
+
+    {% endif %}
+
+{% endblock %}
+
