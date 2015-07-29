@@ -59,6 +59,7 @@ class HomeController extends Controller
 
             $session->set('logged_in', 1);
             $session->set('name', $user->name);
+            $session->set('user_id', $user->user_id);
         }
 
         return new RedirectResponse('/');

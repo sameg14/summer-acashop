@@ -1,0 +1,78 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+<h3>Shipping/Billing Address</h3>
+<hr/>
+
+<form name="addressForm" action="/place_order" method="post" class="form">
+
+    <table>
+
+        <tr>
+
+            <!-- Billing Address -->
+            <td>
+                <h4>Billing Address</h4>
+
+                <label for="billing_street">Street:</label>
+                <input type="text" name="billing_street" id="billing_street"
+                    value="{{ billing.street }}" size="30" />
+                <br/>
+
+                <label for="billing_city">City:</label>
+                <input type="text" name="billing_city" id="billing_city"
+                       value="{{ billing.city }}" size="30" />
+                <br/>
+
+                <label for="billing_state">State:</label>
+                <input type="text" name="billing_state" id="billing_state"
+                       value="{{ billing.state }}" size="30" />
+                <br/>
+
+                <label for="billing_zip">Zip:</label>
+                <input type="text" name="billing_zip" id="billing_zip"
+                       value="{{ billing.zip }}" size="30" />
+
+            </td>
+
+
+            <!-- Shipping Address -->
+            <td>
+
+                <h4>Shipping Address</h4>
+
+                <label for="shipping_street">Street:</label>
+                <input type="text" name="shipping_street" id="shipping_street"
+                       value="{{ shipping.street }}" size="30" />
+
+                <br/>
+
+                <label for="shipping_city">City:</label>
+                <input type="text" name="shipping_city" id="shipping_city"
+                       value="{{ shipping.city }}" size="30" />
+
+                <br/>
+
+                <label for="shipping_state">State:</label>
+                <input type="text" name="shipping_state" id="shipping_state"
+                       value="{{ shipping.state }}" size="30" />
+
+                <br/>
+
+                <label for="shipping_zip">Zip:</label>
+                <input type="text" name="shipping_zip" id="shipping_zip"
+                       value="{{ shipping.zip }}" size="30" />
+
+            </td>
+
+        </tr>
+
+    </table>
+
+    <div style="float: right;">
+        <button type="submit" class="btn btn-info">Next Step: Place Order</button>
+    </div>
+
+</form>
+
+{% endblock %}

@@ -70,6 +70,7 @@ class CartController extends Controller
     {
         /** @var DBCommon $db */
         $db = $this->get('aca.db');
+
         $session = $this->get('session');
 
         $cartItems = $session->get('cart');
@@ -153,9 +154,9 @@ class CartController extends Controller
         $session = $this->get('session');
         $cartItems = $session->get('cart');
 
-        foreach($cartItems as $index => $cartItem){
+        foreach ($cartItems as $index => $cartItem) {
 
-            if($cartItem['product_id'] == $productId){
+            if ($cartItem['product_id'] == $productId) {
                 $cartItems[$index]['quantity'] = $updatedQuantity;
             }
         }
@@ -163,5 +164,66 @@ class CartController extends Controller
         $session->set('cart', $cartItems);
 
         return new RedirectResponse('/cart');
+    }
+
+    /**
+     * Show shipping address form
+     */
+    public function shippingAddressAction()
+    {
+        /** @var Session $session */
+        $session = $this->get('session');
+
+        /** @var DBCommon $db */
+        $db = $this->get('aca.db');
+
+        /** @var int $userId Logged in user identifier */
+        $userId = $session->get('user_id');
+
+        // Get the shipping_address_id and billing_address_id from the user table
+        $query = '
+        select
+            shipping_address_id,
+            billing_address_id
+        from
+            aca_user
+        where
+            user_id = ' . $userId;
+
+        $db->setQuery($query);
+        $shippingIds = $db->loadObject();
+
+        $shippingAddressId = $shippingIds->shipping_address_id;
+        $billingAddressId = $shippingIds->billing_address_id;
+
+        // Get shipping and billing address
+
+        $shippingQuery = '
+        select
+            *
+        from
+            aca_address
+        where
+            address_id =' . $shippingAddressId;
+
+        $db->setQuery($shippingQuery);
+        $shippingAddress = $db->loadObject();
+
+        $billingQuery = '
+        select
+            *
+        from
+            aca_address
+        where
+            address_id =' . $billingAddressId;
+        $db->setQuery($billingQuery);
+        $billingAddress = $db->loadObject();
+
+        return $this->render('AcaShopBundle:Shipping:address.html.twig',
+            array(
+                'shipping' => $shippingAddress,
+                'billing' => $billingAddress
+            )
+        );
     }
 }
