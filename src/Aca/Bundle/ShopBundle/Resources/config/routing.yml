@@ -40,3 +40,7 @@ aca_shipping_address:
 aca_place_order:
     path: /place_order
     defaults: { _controller: AcaShopBundle:Order:place }
+
+aca_receipt:
+    path: /receipt
+    defaults: { _controller: AcaShopBundle:Receipt:show }

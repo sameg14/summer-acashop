@@ -3,9 +3,10 @@
 namespace Aca\Bundle\ShopBundle\Controller;
 
 use Aca\Bundle\ShopBundle\Db\DBCommon;
-use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use \Exception;
 
 /**
  * Class OrderController handles order placing functionality
@@ -43,9 +44,19 @@ class OrderController extends Controller
         // Write the products to the aca_order_product table
         $this->createOrderProducts($orderId);
 
-        die();
+        // Save the completed orderId in session, so we can have it on the
+        // receipt page
+        $session->set('completed_order_id', $orderId);
+
+        // Redirect the user to the receipt route
+        return new RedirectResponse('/receipt');
     }
 
+    /**
+     * Save the user entered addresses in the DB
+     * @param int $orderId Newly created orderId
+     * @throws Exception
+     */
     protected function createOrderAddresses($orderId)
     {
         /** @var DBCommon $db */
@@ -146,7 +157,7 @@ class OrderController extends Controller
                     insert into aca_order_product
                         (order_id, product_id, quantity, price)
                     values
-                        ("'.$orderId.'", "'.$productId.'", "'.$quantity.'", "'.$productPrice.'")';
+                        ("' . $orderId . '", "' . $productId . '", "' . $quantity . '", "' . $productPrice . '")';
 
                     $db->setQuery($query);
                     $db->query();
