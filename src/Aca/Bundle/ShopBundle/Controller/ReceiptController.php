@@ -55,7 +55,11 @@ class ReceiptController extends Controller
         // Get the products on this order from the DB
         $query = '
         select
-            *
+            op.price,
+            op.quantity,
+            p.name,
+            p.description,
+            p.image
         from
             aca_order_product op
             join aca_product p on (p.product_id = op.product_id)

@@ -3,10 +3,81 @@
 {% block body %}
     <h3>Thank you for your order</h3>
 
+    <h4>OrderId: {{ orderId }}</h4>
+
     <!-- Show order Id -->
 
     <!-- Show billing and shipping address -->
+    <table border="0" style="width: 100%;">
 
+        <tr>
+            <td>
+                <h4>Billing</h4>
+                {{ billing.street }}<br/>
+                {{ billing.city }}, {{ billing.state }} - {{ billing.zip }}<br/>
+            </td>
+
+            <td>
+                <h4>Shipping</h4>
+                {{ shipping.street }}<br/>
+                {{ shipping.city }}, {{ shipping.state }} - {{ shipping.zip }}<br/>
+            </td>
+
+        </tr>
+
+    </table>
+
+    <hr/>
+
+    <h4>Order Products</h4>
     <!-- Show order products -->
+
+    {% set orderTotal = 0 %}
+
+    {% if products is not empty %}
+
+        <table class="table table-striped" style="width:100%;">
+            <thead>
+            <tr>
+                <th>Image</th>
+                <th>Product Details</th>
+                <th>Price</th>
+                <th>Quantity</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for product in products %}
+
+                {% set orderTotal = orderTotal + product.price %}
+
+                <tr>
+                    <td>
+                        <img src="{{ product.image }}" width="100px"/>
+                    </td>
+                    <td>
+                        <h3>{{ product.name }}</h3>
+
+                        <p>{{ product.description }}</p>
+                    </td>
+
+                    <td>
+                        <b>${{ product.price }}</b>
+                    </td>
+                    <td>
+                        <b>{{ product.quantity }}</b>
+                    </td>
+
+                </tr>
+
+            {% endfor %}
+            </tbody>
+
+        </table>
+    {% endif %}
+
+    <div style="float:right; color:green; font-size:2em;">
+        Order Total: {{ orderTotal }}
+    </div>
+
 
 {% endblock %}

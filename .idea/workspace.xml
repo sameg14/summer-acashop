@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15e1a7c8-0c47-45c1-92e9-278c31170929" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Aca/Bundle/ShopBundle/Controller/ReceiptController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Aca/Bundle/ShopBundle/Resources/views/Receipt/receipt.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Aca/Bundle/ShopBundle/Controller/OrderController.php" afterPath="$PROJECT_DIR$/src/Aca/Bundle/ShopBundle/Controller/OrderController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Aca/Bundle/ShopBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/Aca/Bundle/ShopBundle/Resources/config/routing.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Aca/Bundle/ShopBundle/Controller/ReceiptController.php" afterPath="$PROJECT_DIR$/src/Aca/Bundle/ShopBundle/Controller/ReceiptController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Aca/Bundle/ShopBundle/Resources/views/Receipt/receipt.html.twig" afterPath="$PROJECT_DIR$/src/Aca/Bundle/ShopBundle/Resources/views/Receipt/receipt.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="acashop.iws" />
@@ -59,11 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReceiptController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ReceiptController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Aca/Bundle/ShopBundle/Controller/ReceiptController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.529411" vertical-offset="1170" max-vertical-offset="2000">
-              <caret line="72" column="10" selection-start-line="72" selection-start-column="10" selection-end-line="72" selection-end-column="10" />
+            <state vertical-scroll-proportion="0.6385542" vertical-offset="795" max-vertical-offset="2100">
+              <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
               <folding>
                 <element signature="e#52#90#0#PHP" expanded="true" />
               </folding>
@@ -71,11 +68,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="receipt.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="receipt.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Aca/Bundle/ShopBundle/Resources/views/Receipt/receipt.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.1295642" vertical-offset="0" max-vertical-offset="849">
-              <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+            <state vertical-scroll-proportion="-5.8333335" vertical-offset="266" max-vertical-offset="1848">
+              <caret line="21" column="27" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="27" />
+              <folding>
+                <element signature="e#224#244#0#HTML" expanded="true" />
+                <element signature="e#860#879#0#HTML" expanded="true" />
+                <element signature="e#1851#1899#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-18.75" vertical-offset="1350" max-vertical-offset="2190">
+              <caret line="120" column="19" selection-start-line="120" selection-start-column="19" selection-end-line="120" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Aca/Bundle/ShopBundle/Resources/views/Cart/list.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-33.75" vertical-offset="0" max-vertical-offset="1215">
+              <caret line="54" column="16" selection-start-line="5" selection-start-column="0" selection-end-line="54" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -107,7 +128,6 @@
         <option value="$PROJECT_DIR$/app/config/parameters.yml" />
         <option value="$PROJECT_DIR$/src/Aca/Bundle/ShopBundle/Resources/config/services.yml" />
         <option value="$PROJECT_DIR$/src/Aca/Bundle/ShopBundle/Resources/views/Product/list.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/src/Aca/Bundle/ShopBundle/Controller/ProductController.php" />
         <option value="$PROJECT_DIR$/scratch.php" />
         <option value="$PROJECT_DIR$/src/Aca/Bundle/ShopBundle/Resources/views/Cart/list.html.twig" />
@@ -118,8 +138,9 @@
         <option value="$PROJECT_DIR$/src/Aca/Bundle/ShopBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/Aca/Bundle/ShopBundle/Controller/OrderController.php" />
         <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/src/Aca/Bundle/ShopBundle/Controller/ReceiptController.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/src/Aca/Bundle/ShopBundle/Resources/views/Receipt/receipt.html.twig" />
+        <option value="$PROJECT_DIR$/src/Aca/Bundle/ShopBundle/Controller/ReceiptController.php" />
       </list>
     </option>
   </component>
@@ -353,6 +374,44 @@
               <option name="myItemId" value="Resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Cart" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="acashop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="acashop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Aca" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ShopBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -415,6 +474,42 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="acashop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="acashop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="acashop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="acashop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -888,14 +983,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Aca/Bundle/ShopBundle/Resources/views/Cart/list.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="1215">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Aca/Bundle/ShopBundle/Controller/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.39285713" vertical-offset="645" max-vertical-offset="1485">
@@ -913,14 +1000,6 @@
           <folding>
             <element signature="e#52#90#0#PHP" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.67142856" vertical-offset="1116" max-vertical-offset="2190">
-          <caret line="112" column="80" selection-start-line="112" selection-start-column="80" selection-end-line="112" selection-end-column="80" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -970,21 +1049,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Aca/Bundle/ShopBundle/Controller/ReceiptController.php">
+    <entry file="file://$PROJECT_DIR$/src/Aca/Bundle/ShopBundle/Resources/views/Cart/list.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.529411" vertical-offset="1170" max-vertical-offset="2000">
-          <caret line="72" column="10" selection-start-line="72" selection-start-column="10" selection-end-line="72" selection-end-column="10" />
-          <folding>
-            <element signature="e#52#90#0#PHP" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-33.75" vertical-offset="0" max-vertical-offset="1215">
+          <caret line="54" column="16" selection-start-line="5" selection-start-column="0" selection-end-line="54" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.75" vertical-offset="1350" max-vertical-offset="2190">
+          <caret line="120" column="19" selection-start-line="120" selection-start-column="19" selection-end-line="120" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Aca/Bundle/ShopBundle/Resources/views/Receipt/receipt.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1295642" vertical-offset="0" max-vertical-offset="849">
-          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-          <folding />
+        <state vertical-scroll-proportion="-5.8333335" vertical-offset="266" max-vertical-offset="1848">
+          <caret line="21" column="27" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="27" />
+          <folding>
+            <element signature="e#224#244#0#HTML" expanded="true" />
+            <element signature="e#860#879#0#HTML" expanded="true" />
+            <element signature="e#1851#1899#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Aca/Bundle/ShopBundle/Controller/ReceiptController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6385542" vertical-offset="795" max-vertical-offset="2100">
+          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+          <folding>
+            <element signature="e#52#90#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
