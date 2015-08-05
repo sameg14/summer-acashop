@@ -78,14 +78,16 @@ class HomeController extends Controller
         return new RedirectResponse('/');
     }
 
-    public function processFacebookLogin(){
+    public function processFacebookLogin()
+    {
 
         /** @var DBCommon $db */
         $db = $this->get('aca.db');
 
     }
 
-    public function processFacebookLogin2(){
+    public function processFacebookLogin2()
+    {
 
         $db = new DBCommon('localhost', 'root', 'root', 'acashop');
 

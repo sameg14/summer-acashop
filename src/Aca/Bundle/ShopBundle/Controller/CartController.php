@@ -71,20 +71,15 @@ class CartController extends Controller
         /** @var DBCommon $db */
         $db = $this->get('aca.db');
 
+        $product = $this->get('aca.product');
+        $cart = $this->get('aca.cart');
         $session = $this->get('session');
 
         $cartItems = $session->get('cart');
-        $cartProductIds = [];
 
-        foreach ($cartItems as $cartItem) {
-            $cartProductIds[] = $cartItem['product_id'];
-        }
+        $cartProductIds = $cart->getProductIds();
 
-        $query = 'select * from aca_product where product_id
-                  in(' . implode(',', $cartProductIds) . ')';
-
-        $db->setQuery($query);
-        $dbProducts = $db->loadObjectList();
+        $dbProducts = $product->getProductsByProductIds($cartProductIds);
 
         /** @var array $userSelectedProducts Contains the merge of products/cart items */
         $userSelectedProducts = [];
@@ -122,22 +117,15 @@ class CartController extends Controller
 
     /**
      * Delete one item from your shopping cart
+     * @throws \Exception
      * @return RedirectResponse
      */
     public function deleteAction()
     {
         $productId = $_POST['product_id'];
 
-        $session = $this->get('session');
-        $cartItems = $session->get('cart');
-
-        foreach ($cartItems as $index => $cartItem) {
-            if ($cartItem['product_id'] == $productId) {
-                unset($cartItems[$index]);
-            }
-        }
-
-        $session->set('cart', $cartItems);
+        $cart = $this->get('aca.cart');
+        $cart->delete($productId);
 
         return new RedirectResponse('/cart');
     }
@@ -151,17 +139,8 @@ class CartController extends Controller
         $productId = $_POST['product_id'];
         $updatedQuantity = $_POST['quantity'];
 
-        $session = $this->get('session');
-        $cartItems = $session->get('cart');
-
-        foreach ($cartItems as $index => $cartItem) {
-
-            if ($cartItem['product_id'] == $productId) {
-                $cartItems[$index]['quantity'] = $updatedQuantity;
-            }
-        }
-
-        $session->set('cart', $cartItems);
+        $cart = $this->get('aca.cart');
+        $cart->updateQuantity($productId, $updatedQuantity);
 
         return new RedirectResponse('/cart');
     }

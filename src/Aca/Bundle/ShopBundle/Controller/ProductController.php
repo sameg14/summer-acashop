@@ -2,8 +2,7 @@
 
 namespace Aca\Bundle\ShopBundle\Controller;
 
-use Aca\Bundle\ShopBundle\Db\DBCommon;
-use Symfony\Component\HttpFoundation\Session\Session;
+use Aca\Bundle\ShopBundle\Shop\Product;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 /**
@@ -17,12 +16,10 @@ class ProductController extends Controller
      */
     public function showAction()
     {
-        /** @var DBCommon $db */
-        $db = $this->get('aca.db');
+        /** @var Product $product */
+        $product = $this->get('aca.product');
 
-        $query = 'select * from aca_product';
-        $db->setQuery($query);
-        $products = $db->loadObjectList();
+        $products = $product->getAllProducts();
 
         return $this->render('AcaShopBundle:Product:list.html.twig',
             array(
