@@ -3,7 +3,7 @@
 {% block body %}
     <h3>Shopping Cart</h3>
 
-    {% if products is not empty %}
+    {% if products is defined and products is not empty %}
 
         <table class="table table-striped" style="width:100%;">
             <thead>
@@ -69,7 +69,9 @@
 
     {% else %}
 
-        <h4>No products to display</h4>
+        {% if errorMessage is defined and errorMessage is not empty %}
+            {{ errorMessage }}
+        {% endif %}
 
     {% endif %}
 

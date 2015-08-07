@@ -64,32 +64,4 @@ class HomeController extends Controller
 
         return new RedirectResponse('/');
     }
-
-    /**
-     * This will handle logging a user out
-     */
-    public function logoutAction()
-    {
-        /** @var Session $session */
-        $session = $this->get('session');
-
-        $session->clear();
-
-        return new RedirectResponse('/');
-    }
-
-    public function processFacebookLogin()
-    {
-
-        /** @var DBCommon $db */
-        $db = $this->get('aca.db');
-
-    }
-
-    public function processFacebookLogin2()
-    {
-
-        $db = new DBCommon('localhost', 'root', 'root', 'acashop');
-
-    }
 }

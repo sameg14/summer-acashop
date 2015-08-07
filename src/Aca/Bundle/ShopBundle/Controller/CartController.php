@@ -68,51 +68,29 @@ class CartController extends Controller
      */
     public function showAction()
     {
-        /** @var DBCommon $db */
-        $db = $this->get('aca.db');
+        try {
 
-        $product = $this->get('aca.product');
-        $cart = $this->get('aca.cart');
-        $session = $this->get('session');
+            $cart = $this->get('aca.cart');
+            $grandTotal = $cart->getGrandTotal();
+            $userSelectedProducts = $cart->getProducts();
 
-        $cartItems = $session->get('cart');
+            return $this->render('AcaShopBundle:Cart:list.html.twig',
+                array(
+                    'products' => $userSelectedProducts,
+                    'grandTotal' => $grandTotal
+                )
+            );
 
-        $cartProductIds = $cart->getProductIds();
+        } catch (\Exception $exception) {
 
-        $dbProducts = $product->getProductsByProductIds($cartProductIds);
+            $errorMessage = $exception->getMessage();
 
-        /** @var array $userSelectedProducts Contains the merge of products/cart items */
-        $userSelectedProducts = [];
-
-        // Challenge: Is to merge the items in the cart, with products!
-        // Hint: two loops! loop through the DB products first, then cart items
-
-        $grandTotal = 0.00;
-
-        foreach ($cartItems as $cartItem) {
-
-            foreach ($dbProducts as $dbProduct) {
-
-                // magic happens! the struggle is real...
-
-                if ($dbProduct->product_id == $cartItem['product_id']) {
-
-                    $dbProduct->quantity = $cartItem['quantity'];
-
-                    $dbProduct->total_price = $dbProduct->price * $cartItem['quantity'];
-                    $grandTotal += $dbProduct->total_price;
-
-                    $userSelectedProducts[] = $dbProduct;
-                }
-            }
+            return $this->render('AcaShopBundle:Cart:list.html.twig',
+                array(
+                    'errorMessage' => $errorMessage
+                )
+            );
         }
-
-        return $this->render('AcaShopBundle:Cart:list.html.twig',
-            array(
-                'products' => $userSelectedProducts,
-                'grandTotal' => $grandTotal
-            )
-        );
     }
 
     /**
@@ -158,6 +136,14 @@ class CartController extends Controller
 
         /** @var int $userId Logged in user identifier */
         $userId = $session->get('user_id');
+
+        if (empty($userId)) {
+
+            // Add some messaging telling them: why am i here and what do i do?
+            $session->set('error_message', 'Why am I here and what am I doing?');
+
+            return new RedirectResponse('/');
+        }
 
         // Get the shipping_address_id and billing_address_id from the user table
         $query = '
